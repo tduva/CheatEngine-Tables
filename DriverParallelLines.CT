@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="18">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Some sort of ticks?"</Description>
+      <LastState Value="??" Activated="0" RealAddress="0071CE90"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>DriverParallelLines.exe+31CE90</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="0070CA68"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>DriverParallelLines.exe+30CA68</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00934698"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>DriverParallelLines.exe+534698</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"No description"</Description>
+      <LastState Activated="0" RealAddress="006E8CF5"/>
+      <Color>80000008</Color>
+      <VariableType>String</VariableType>
+      <Length>20</Length>
+      <Unicode>0</Unicode>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>DriverParallelLines.exe+2E8CF5</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"No description"</Description>
+      <LastState Activated="0" RealAddress="061C2697"/>
+      <Color>80000008</Color>
+      <VariableType>String</VariableType>
+      <Length>20</Length>
+      <Unicode>0</Unicode>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>061C2697</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Current Mission/Cutscene (changes when started)"</Description>
+      <LastState Activated="0" RealAddress="006E72BC"/>
+      <Color>80000008</Color>
+      <VariableType>String</VariableType>
+      <Length>20</Length>
+      <Unicode>0</Unicode>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>DriverParallelLines.exe+2E72BC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"No description"</Description>
+      <LastState Activated="0" RealAddress="006E71BC"/>
+      <Color>80000008</Color>
+      <VariableType>String</VariableType>
+      <Length>20</Length>
+      <Unicode>0</Unicode>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>DriverParallelLines.exe+2E71BC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="006E2A74"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>DriverParallelLines.exe+2E2A74</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

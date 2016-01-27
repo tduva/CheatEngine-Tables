@@ -1,0 +1,1746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="18">
+  <Forms>
+    <GTASAForm Class="TCEForm" Encoding="Ascii85">tyjx)8b:fzK,N#4C_fVv$s%2fDvv4$MV4ii+]yE#OBGoV4YrrAhH02CM%]$pv7k}{r{6;W#-EU=EVIcf8}.OA$sgng)l6$LJvL664fN}YbMHO)!OMzabUUrDt!_@*qW)qkQMYc[#jll9G,=/:*.vad:)1cPlk3uP=x#%t8FrYP]#obd.Fw]b%vJdaJYm=wY/8^TVMJK=tgP1aS4AP+W-__2/w0OGIBOFwxX[@i7SgQBnA(_GA:2QlkZ,VZw1$iNqa!,9t4_oMGY0#v-0IP)!ug{2ab_A[m_07q%wC2d+O}/OJOqRUphOh9u-En-/Yx]TC}]GN6UHdHrcTvDiqGce)r-*YD[Z+Zq4W+*25^L!2A;D8il*eF6K.EdWZj5Mlv_PNjA2x];JA+D1_]g:UL};G,p3ekOMM$VNMNbzeJkI-BFNv2PC2shFk!:5?^ahniZJkxC[lZp8J)UB8y6I8EFOo=ReWwm:Sp5WKz,WTUwL;QzuZ5Dbn#9_vr?g!?CzhdVilkHn4uQt/WXXSavqNOeG]s@7z;Uh$O0TG.l[/4D%?/3VIPxWRdPc)_AaVbnl,,0WH_%*!gdj2F+Wl5U+{d0?NnWI)4MgIge7VI%1F?sw?iYzTS6XJuPErushbwr;klVme*{o)CMXan6vzKw.P_R$.SV9mn[7;c.efvbNGVJZJr3-*G(HU+kycqV*VOkt2^Tu@C{2_gXF5JFjZphXPsR;p2q/yjA=i)rKuNWvSmYG+JmDFSW51[(5^VFpc1uEQGZ+/uWNBVo-WF+/TO06aWWbI#Kq{S9!56$3.V{aa8eoE*FXN0cMA;XQn7tOU[XoMY?M0m(Qt}]qURu(Cap[qdOUfAIHWNwtv$2qVM(TSmr%k,BG4fB2vt]Q6VzajUV!z6!EM8:^8ZIP5w5.D:b8xD:6#ftFuGAVCRf@=2I=W[I$,phn,S{[^#8FfEEo=0xzuAuqO:cyTTN?H{+Y$bOK6GByG*I1oFn]jR[(*a_P=dc5gh2TNXao[=yumASqj=H?$SdgYJ+CE*t67z50/GpjG:[X+BM/c%xN?:R#IrHaUOM23E9wxHMOzfcz?:A!62OxjY@z$n4H*cI%N.0CHmFDaLJUax5xhW8kssjsI8aVt$@ByJD6$aCrg#JNqZ*WZMuc9G1r4!_Qxd77z)k;5uF.4Z@cY;xN,d!o*500kl#)Q_8;zgH-FX-B),7k%Ls?D^c%]NU=Rf5nW#?rwEv}%Elg76Z/73j9ee%3/TtBy*-LgE:k@Q$QS7$toW]P3@s0V_R-0NW0cP)o$Zs93%l*(#MP_Uu3[wu0,2W/6{H.bTZGoNQokTKUmn{EkSP._I_aOYtEz{*J%l/,LT7s#*H^lmL:=%ums-7}KP^%JtZ/8Nz#;[W35Q-[oGTQsYIuS}-zDJlu(g%WR3*boy?A6TUz.H,b}54{X!k8y294C=Q6ct{He^e7mLiW,lT[m3$Xq1i(ps47v=f%[_{5{*e/y;)w=DWk)7U,lEc9-r9uN(5]EfIb!%Ql_Dw-Eo=nS2NvTQs{:rzji]6=fzdENy;P8:TO#PC96Kw+8dS%_0$OVh92!fZ]Y$ddct1e2/SLI3IY!YEG,u#Nn2n4M:[sEl1LXKp=dnIu3a(?WL4wN=.IXJI81hqbvf0koSnCU/#IRYWRet@E8Y*%ke9,@1BBqM?gD</GTASAForm>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>37</ID>
+      <Description>"Global Stuff"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>36</ID>
+          <Description>"Playing Time"</Description>
+          <LastState Value="11750" Activated="0" RealAddress="00B7CB84"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>B7CB84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>163</ID>
+          <Description>"Playing Time 1.01"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00B7F204"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77F204</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>56</ID>
+          <Description>"Weather Related?"</Description>
+          <LastState Value="11674" Activated="0" RealAddress="00B70158"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+770158</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>50</ID>
+          <Description>"On Mission"</Description>
+          <LastState Value="1" Activated="0" RealAddress="00A49FC4"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+649FC4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>28</ID>
+          <Description>"Achievements"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26</ID>
+              <Description>"Distance on foot"</Description>
+              <LastState Value="1.952914" Activated="0" RealAddress="00B7938C"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+77938C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>27</ID>
+              <Description>"Distance in a car"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B79390"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+779390</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>29</ID>
+              <Description>"Distance (Bicycle)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B793EC"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+7793EC</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>72</ID>
+          <Description>"Keys"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>73</ID>
+              <Description>"Forward/Steer Forward"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B7345B"/>
+              <Color>80000008</Color>
+              <VariableType>Byte</VariableType>
+              <Address>gta_sa.exe+77345B</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>77</ID>
+              <Description>"Action/AltFire (4)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B73460"/>
+              <Color>80000008</Color>
+              <VariableType>Byte</VariableType>
+              <Address>gta_sa.exe+773460</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>76</ID>
+              <Description>"Jump/Brake/Reverse (14)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B73474"/>
+              <Color>80000008</Color>
+              <VariableType>Byte</VariableType>
+              <Address>gta_sa.exe+773474</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>75</ID>
+              <Description>"Enter/Exit (15)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B73476"/>
+              <Color>80000008</Color>
+              <VariableType>Byte</VariableType>
+              <Address>gta_sa.exe+773476</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>74</ID>
+              <Description>"Sprint/Accelerate (16)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B73478"/>
+              <Color>80000008</Color>
+              <VariableType>Byte</VariableType>
+              <Address>gta_sa.exe+773478</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>133</ID>
+              <Description>"Fire/Fire (17)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B7347A"/>
+              <Color>80000008</Color>
+              <VariableType>Byte</VariableType>
+              <Address>gta_sa.exe+77347A</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>134</ID>
+              <Description>"Gang Follow/Next Radio (8)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B73468"/>
+              <Color>80000008</Color>
+              <VariableType>Byte</VariableType>
+              <Address>gta_sa.exe+773468</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>135</ID>
+              <Description>"Gang Stay/Prev Radio (9)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B7346A"/>
+              <Color>80000008</Color>
+              <VariableType>Byte</VariableType>
+              <Address>gta_sa.exe+77346A</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>112</ID>
+          <Description>"Player Ped Status"</Description>
+          <LastState Value="1" Activated="0" RealAddress="09DB5F00"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CD98</Address>
+          <Offsets>
+            <Offset>530</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>164</ID>
+          <Description>"Player Ped Status (1.01)"</Description>
+          <LastState Value="??" Activated="0" RealAddress="00000530"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77F418</Address>
+          <Offsets>
+            <Offset>530</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>101</ID>
+          <Description>"StartGame_A"</Description>
+          <LastState Value="1" Activated="0" RealAddress="00B7CEDC"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CEDC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>102</ID>
+          <Description>"LoadingGame_A"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00BA67A5"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+7A67A5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>115</ID>
+          <Description>"Current Menu"</Description>
+          <LastState Value="6" Activated="0" RealAddress="00BA68A5"/>
+          <Color>80000008</Color>
+          <VariableType>Byte</VariableType>
+          <Address>gta_sa.exe+7A68A5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>132</ID>
+          <Description>"Selected Menu Entry"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00BA679C"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+7A679C</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>31</ID>
+      <Description>"Phonecalls"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32</ID>
+          <Description>"$TIME_FROM_LAST_CALL"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00A49C48"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+649C48</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>35</ID>
+          <Description>"Recall Time"</Description>
+          <LastState Value="20000" Activated="0" RealAddress="00A4AF90"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+64AF90</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00A499F8"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+6499F8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>53</ID>
+          <Description>"Phone Ringing"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00A4999C"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+64999C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>51</ID>
+          <Description>"Current Call Id"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00A4AF70"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+64AF70</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>52</ID>
+          <Description>"Phonecall Time"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00A49C40"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+649C40</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>59</ID>
+      <Description>"Wanted Level"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>58</ID>
+          <Description>"Points"</Description>
+          <LastState Value="0" Activated="0" RealAddress="0C2860E0"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>0</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>60</ID>
+          <Description>"Points 2"</Description>
+          <LastState Value="0" Activated="0" RealAddress="0C2860E4"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>4</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>63</ID>
+          <Description>"Amount of cops "in pursuit""</Description>
+          <LastState Value="0" Activated="0" RealAddress="0C2860F8"/>
+          <Color>80000008</Color>
+          <VariableType>Byte</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>18</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>64</ID>
+          <Description>"Last time Wanted Level decreased"</Description>
+          <LastState Value="11317" Activated="0" RealAddress="0C2860E8"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>65</ID>
+          <Description>"Time Wanted Level changed"</Description>
+          <LastState Value="0" Activated="0" RealAddress="0C2860EC"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>C</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>61</ID>
+          <Description>"Parole Time (Pay&amp;Spray)"</Description>
+          <LastState Value="0" Activated="0" RealAddress="0C2860F0"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>10</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>62</ID>
+          <Description>"Level Multiplier"</Description>
+          <LastState Value="1" Activated="0" RealAddress="0C2860F4"/>
+          <Color>80000008</Color>
+          <VariableType>Float</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>14</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66</ID>
+          <Description>"Chase time"</Description>
+          <LastState Value="0" Activated="0" RealAddress="0C286104"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>24</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>67</ID>
+          <Description>"Chase time counter"</Description>
+          <LastState Value="0" Activated="0" RealAddress="0C286108"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+77CD9C</Address>
+          <Offsets>
+            <Offset>28</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"Skill/Stats"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"Progress"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>16</ID>
+              <Description>"Max Health Progress (600k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B7950C"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+77950C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2</ID>
+              <Description>"Stamina/Run (300k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B79500"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+779500</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>15</ID>
+              <Description>"Muscle [Run,Sprint,Swim,Dive] (150k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794FC"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794FC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>6</ID>
+              <Description>"Bike (180k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794F8"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794F8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>11</ID>
+              <Description>"Flying (300k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794F0"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794F0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1</ID>
+              <Description>"Driving (300k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794EC"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794EC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>7</ID>
+              <Description>"Lung Capacity (60k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794E8"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794E8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>17</ID>
+              <Description>"Stamina/Swim (180k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794E4"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794E4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>0</ID>
+              <Description>"Cycling (120k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794E0"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794E0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>24</ID>
+              <Description>"Stamina/Cycle (300k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794DC"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794DC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5</ID>
+              <Description>"Stamina/Sprint (300k)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794D8"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7794D8</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>54</ID>
+          <Description>"Skills"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>10</ID>
+              <Description>"Bicycle Skill"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B791B8"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7791B8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>8</ID>
+              <Description>"Bike Skill"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B791B4"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7791B4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>9</ID>
+              <Description>"Flying Skill"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B7919C"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+77919C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>25</ID>
+              <Description>"Driving"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B790A0"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7790A0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>30</ID>
+              <Description>"Uzi/Tec9"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B794AC"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+7794AC</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>55</ID>
+          <Description>"Stats"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>12</ID>
+              <Description>"Lung Capacity"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B791A4"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+7791A4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>22</ID>
+              <Description>"Max Health"</Description>
+              <LastState Value="569" Activated="0" RealAddress="00B793E0"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+7793E0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>20</ID>
+              <Description>"Muscle"</Description>
+              <LastState Value="50" Activated="0" RealAddress="00B793DC"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+7793DC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>21</ID>
+              <Description>"Fat"</Description>
+              <LastState Value="200" Activated="0" RealAddress="00B793D4"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+7793D4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>19</ID>
+              <Description>"Stamina"</Description>
+              <LastState Value="100" Activated="0" RealAddress="00B793D8"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+7793D8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>23</ID>
+              <Description>"Sex Appeal"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00B793E4"/>
+              <Color>80000008</Color>
+              <VariableType>Float</VariableType>
+              <Address>gta_sa.exe+7793E4</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>71</ID>
+      <Description>"Missions"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>70</ID>
+          <Description>"Madd Dogg Time until he jumps"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00A51334"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+651334</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>154</ID>
+          <Description>"$8014 - EotL3 Progress Variable (3 at end cutscene)"</Description>
+          <LastState Value="0" Activated="0" RealAddress="00A51698"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>gta_sa.exe+651698</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>118</ID>
+      <Description>"Game Progress"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>130</ID>
+          <Description>"Los Santos"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>80</ID>
+              <Description>"$INTRO_TOTAL_PASSED_MISSIONS ($448)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A060"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A060</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>81</ID>
+              <Description>"$SWEET_TOTAL_PASSED_MISSIONS ($452)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A070"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A070</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>94</ID>
+              <Description>"$RYDER_TOTAL_PASSED_MISSIONS ($453)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A074"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A074</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>103</ID>
+              <Description>"$SMOKE_TOTAL_PASSED_MISSIONS ($454)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A078"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A078</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>105</ID>
+              <Description>"$MISSION_LOWRIDER_PASSED"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A084"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A084</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>104</ID>
+              <Description>"CRASH_LS"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A080"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A080</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>82</ID>
+              <Description>"LS_FINAL"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A088"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A088</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>100</ID>
+              <Description>"OG_LOC"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A07C"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A07C</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>129</ID>
+          <Description>"Badlands"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>121</ID>
+              <Description>"$MISSION_BADLANDS_PASSED ($493)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A114"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A114</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>126</ID>
+              <Description>"$MISSION_TANKER_COMMANDER_PASSED ($716)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A490"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A490</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>125</ID>
+              <Description>"$MISSION_SMALL_TOWN_BANK_PASSED ($715)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A48C"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A48C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>124</ID>
+              <Description>"$MISSION_LOCAL_LIQUOR_STORE_PASSED ($714)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A488"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A488</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>128</ID>
+              <Description>"Betting Shop passed - $ALL_CATALINA_MISSIONS_PASSED ($717) "</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A494"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A494</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>127</ID>
+              <Description>"$2163 (King in Exile)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4BB2C"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64BB2C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>107</ID>
+              <Description>"$CESAR_TOTAL_PASSED_MISSIONS ($492)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A110"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A110</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>106</ID>
+              <Description>"$TRUTH_TOTAL_PASSED_MISSIONS ($491)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A10C"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A10C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>147</ID>
+              <Description>"$CATALINA_TOTAL_PASSED_MISSIONS ($64)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A49A60"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+649A60</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>156</ID>
+          <Description>"San Fierro"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>139</ID>
+              <Description>"$GARAGE_TOTAL_PASSED_MISSIONS ($541)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A1D4"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A1D4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>140</ID>
+              <Description>"$CRASH_SF_TOTAL_PASSED_MISSIONS ($546)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A1E8"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A1E8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>141</ID>
+              <Description>"$SYNDICATE_TOTAL_PASSED_MISSIONS ($545)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A1E4"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A1E4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>142</ID>
+              <Description>"$WUZIMU_TOTAL_PASSED_MISSIONS ($543)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A1DC"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A1DC</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>158</ID>
+          <Description>"Las Venturas"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>143</ID>
+              <Description>"$TORENO_TOTAL_PASSED_MISSIONS ($593)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A2A4"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A2A4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>144</ID>
+              <Description>"$CASINO_TOTAL_PASSED_MISSIONS ($597)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A2B4"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A2B4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>145</ID>
+              <Description>"$598 (CRASH_LV_TOTAL_PASSED_MISSIONS)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A2B8"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A2B8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>175</ID>
+              <Description>"$599 (Madd Dogg)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A2BC"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>0xa4a2bc</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>136</ID>
+          <Description>"RTLS"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>137</ID>
+              <Description>"$MANSION_TOTAL_PASSED_MISSIONS ($626)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A328"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A328</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>157</ID>
+              <Description>"$GROVE_TOTAL_PASSED_MISSIONS ($627)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A32C"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A32C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>138</ID>
+              <Description>"$RIOT_TOTAL_PASSED_MISSIONS ($629)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4A334"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64A334</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>155</ID>
+          <Description>"Other"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>123</ID>
+              <Description>"$RACES_WON_NUMBER ($2330)"</Description>
+              <LastState Value="0" Activated="0" RealAddress="00A4BDC8"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>gta_sa.exe+64BDC8</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>159</ID>
+      <Description>"No description"</Description>
+      <LastState Value="8835432" Activated="0" RealAddress="09DB59D0"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>gta_sa.exe+76F5F0</Address>
+      <Offsets>
+        <Offset>0</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>160</ID>
+          <Description>"Minigun"</Description>
+          <LastState Value="0" Activated="0" RealAddress="09DB6034"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+5A0+C4</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>161</ID>
+              <Description>"No description"</Description>
+              <LastState Value="0" Activated="0" RealAddress="09DB603C"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>162</ID>
+              <Description>"No description"</Description>
+              <LastState Value="0" Activated="0" RealAddress="09DB6040"/>
+              <Color>80000008</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+C</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>171</ID>
+      <Description>"Versions"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>169</ID>
+          <Description>"Version 1.0 EU/AUS or 1.0 US Hoodlum or 1.0 Downgraded"</Description>
+          <LastState Value="38079" Activated="0" RealAddress="008245BC"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>008245BC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>168</ID>
+          <Description>"Version 1.0 US"</Description>
+          <LastState Value="1946157057" Activated="0" RealAddress="0082457C"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>82457C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>166</ID>
+          <Description>"Version 1.01 EU/AUS or 1.01 Deviance or 1.01 Downgraded (+0x2680)"</Description>
+          <LastState Value="2385428541" Activated="0" RealAddress="0082533C"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>82533C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>165</ID>
+          <Description>"Version 1.01 US (+0x2680)"</Description>
+          <LastState Value="877234944" Activated="0" RealAddress="008252FC"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>8252FC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>167</ID>
+          <Description>"Version 3.0 Steam (+0x75130)"</Description>
+          <LastState Value="1752397168" Activated="0" RealAddress="0085EC4A"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>85EC4A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>170</ID>
+          <Description>"Version 1.01 Steam? (+0x75770)"</Description>
+          <LastState Value="1886351180" Activated="0" RealAddress="0085DEDA"/>
+          <Color>80000008</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>85DEDA</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>172</ID>
+      <Description>"No description"</Description>
+      <LastState Activated="0" RealAddress="00A90678"/>
+      <Color>80000008</Color>
+      <VariableType>String</VariableType>
+      <Length>10</Length>
+      <Unicode>0</Unicode>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>A8B42C</Address>
+      <Offsets>
+        <Offset>8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>173</ID>
+      <Description>"First Active Thread Name"</Description>
+      <LastState Activated="0" RealAddress="00A92CF0"/>
+      <Color>80000008</Color>
+      <VariableType>String</VariableType>
+      <Length>5</Length>
+      <Unicode>0</Unicode>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>gta_sa.exe+692CF0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>174</ID>
+      <Description>"No description"</Description>
+      <LastState Activated="0" RealAddress="00A91010"/>
+      <Color>80000008</Color>
+      <VariableType>String</VariableType>
+      <Length>4</Length>
+      <Unicode>0</Unicode>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>gta_sa.exe+691010</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>176</ID>
+      <Description>"Bicycle Exp Steam (+0x93228)"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+80C708</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>177</ID>
+      <Description>"Intro Missions"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+6C19D0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>178</ID>
+      <Description>"Progress made (Steam) ?"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+80C294</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>179</ID>
+      <Description>"Sweet Missions"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+6C19E0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>180</ID>
+      <Description>"Current Call ID (Steam)"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+6C28E0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>181</ID>
+      <Description>"Start (Steam)"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+810214</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>182</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+80FD60</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>183</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+80FD64</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>184</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+80FD68</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>185</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+80FD6C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>186</ID>
+      <Description>"Playing Time Steam?"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+80FD74</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>187</ID>
+      <Description>"Menu (Steam)"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+5409BC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>189</ID>
+      <Description>"Ped Status? (Steam)"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+7FD4B0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>192</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+007FCA10</Address>
+      <Offsets>
+        <Offset>530</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>193</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+008100D0</Address>
+      <Offsets>
+        <Offset>530</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>194</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"gta-sa.exe"+008967A8</Address>
+      <Offsets>
+        <Offset>530</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>195</ID>
+      <Description>"$166"</Description>
+      <LastState Value="292.3299866" Activated="0" RealAddress="00A49BF8"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>0xa49bf8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>196</ID>
+      <Description>"$108"</Description>
+      <LastState Value="0.0625" Activated="0" RealAddress="00A49B10"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>0xa49b10</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>function debug(text)
+         if enabled("DebugOutputCheckbox") then
+            print(text)
+         end
+end
+
+local gameVersionOffset = 0
+
+function adjustAddress(addr)
+         if type(addr) == "string" then
+            addr = tonumber(addr)
+         end
+         if addr == nil then
+            return nil
+         end
+         return addr+gameVersionOffset
+end
+
+function getInteger(addr)
+         return readInteger(adjustAddress(addr))
+end
+
+function getByte(addr)
+         return readBytes(adjustAddress(addr), 1, false)
+end
+
+function getFloat(addr)
+         return readFloat(adjustAddress(addr))
+end
+
+local lastValues = {}
+local history = {}
+local maxValues = {}
+local lastOutput = {}
+local progressValues = {
+      {"0xB794E8","int","Lung Capacity","diff",60000},
+      {"0xB794FC","int","Muscle","diff",150000},
+      {"0xB7950C","int","Max Health","diff",600000},
+      {"0xB79500","int","Stamina (Run)","diff",300000},
+      {"0xB794D8","int","Stamina (Sprint)","diff",300000},
+      {"0xB794DC","int","Stamina (Cycle)","diff",300000},
+      {"0xB794E4","int","Stamina (Swim)","diff",180000},
+      {"0xB794EC","int","Driving","diff",300000},
+      {"0xB794F8","int","Bike","diff",180000},
+      {"0xB794E0","int","Cycling","diff",120000},
+      {"0xB794F0","int","Flying","diff",300000}
+}
+local statValues = {
+	{"0xB791A4","int","Lung Capacity","diff"},
+	{"0xB793DC","float","Muscle","diff"},
+	{"0xB793D4","float","Fat","diff"},
+	{"0xB793E0","float","Max Health","diff"},
+	{"0xB793D8","float","Stamina","diff"},
+	{"0xB790A0","int","Driving","diff"},
+	{"0xB791B4","int","Bike","diff"},
+	{"0xB791B8","int","Bicycle","diff"},
+	{"0xB7919C","int","Flying","diff"},
+	{"0xB793E4","float","Sex Appeal","diff"},
+	{"0xB794AC","float","Uzi/Tec9","diff"}
+}
+local maxEnabled = false
+
+local phoneCalls = {
+	[0]='Catalina (Mission)',
+	[1]='Catalina (SF)',
+	[2]='Catalina (Desert)',
+	[3]='Catalina (LV)',
+	[4]='Catalina (RTLS)',
+	[5]='Catalina (End)',
+	[6]="OGLoc",
+	[7]="Cesar (Lowrider Race)",
+	[8]="Cesar (Catalina)",
+	[9]="Crash (Intro)",
+	[10]="Cesar (Badlands Race)",
+	[11]="Kendl (Loser)",
+	[12]="Crash (Burning Desire)",
+	[13]="Crash (High Noon)",
+	[14]="Big Smoke",
+	[15]="The Truth (Intro)",
+	[16]="The Truth (AYGTSF)",
+	[17]="The Truth (Green Goo)",
+	[18]="Sweet (Doberman)",
+	[19]="Sweet (Intro)",
+	[20]="Sweet (Gym)",
+	[21]="Sweet (Gym, fat)",
+	[22]="Sweet (Gang Territories)",
+	[23]="Sweet (End of the Line)",
+	[24]="Sweet (Prison)",
+	[25]="Sweet (Prison2)",
+	[29]='Zero (Asset)',
+	[30]="Zero (Mission)",
+	[31]='Jethro (Driving School)',
+	[32]="Jethro (Street Races)",
+	[33]="Jethro (Wang Cars)",
+	[34]="Woozie",
+	[35]="Woozie",
+	[36]="Woozie (Pass Key)",
+	[41]="Toreno (Toreno Missions)",
+	[42]="Toreno (Highjack)",
+	[43]="Toreno (Interdiction)",
+	[47]="Paul (Intensive Care)",
+	[48]="Rosenberg (Freefall)",
+	[49]="Rosenberg (Saint Mark's)",
+	[50]="Rosenberg (Vertical Bird)",
+}
+
+local function currentCall(value)
+	if getInteger(0xA4999C) == 1 then
+		return phoneCalls[value]
+	end
+	return nil
+end
+
+local function actionHeld(value)
+	if value == 0 then
+		return "-"
+	end
+	return "Pressed"
+end
+
+local phoneValues = {
+	{"0xA49FC4","int","On Mission"},
+	--{"00A4999C","int","Phone ringing"},
+	{"0xB7CB84","int","Phone Timer",cf=function(v) return f(v - getInteger("0xA49C40"),0.001,3) end},
+	{"0xA4AF70","int","Calling",cf=currentCall},
+	{"0xB73460","byte","Action Key",cf=actionHeld},
+}
+
+local misc = {
+	--{"40@","int","40@"},
+	{"54@","int","54@"},
+}
+
+function isLocalVar(variable)
+	return variable:sub(-1,-1) == "@"
+end
+
+function getLocalVarAddress(variable)
+	variable = variable:sub(1,-2) -- Remove trailing @
+	return 10783072 + variable*4
+end
+
+function isGlobalVar(variable)
+    return variable:sub(1,1) == "$"
+end
+
+function getGlobalVarAddress(variable)
+    variable = variable:sub(2) -- Remove leading $
+    return 10787168 + variable*4
+end
+
+function getVarAddress(variable)
+    if isLocalVar(variable) then
+       return getLocalVarAddress(variable)
+    end
+    if isGlobalVar(variable) then
+         return getGlobalVarAddress(variable)
+    end
+    return nil
+end
+
+
+function longestLabel(values)
+	local max = 0
+	for _,v in ipairs(values) do
+		if v[3]:len() &gt; max then
+			max = v[3]:len()
+		end
+	end
+	return max
+end
+
+function paddedLabel(label, max)
+	local pad = max - label:len()
+	return string.rep(" ",pad)..label..":"
+end
+
+function update(values, file, factor)
+	local output = ""
+	local longestLabel = longestLabel(values)
+	for _,v in ipairs(values) do
+        	local address = v[1]
+		local valueType = v[2]
+        	local label = v[3]
+        	local type = v[4]
+		local limit = v[5]
+		local value
+
+		if isLocalVar(address) then
+			address = getLocalVarAddress(address)
+		end
+
+		if valueType == "float" then
+			value = getFloat(address)
+		elseif valueType == "byte" then
+			value = getByte(address)
+		else
+			value = getInteger(address)
+		end
+        if value == nil then
+           return ""
+        end
+		if v.cf ~= nil then
+			value = v.cf(value)
+			if value == nil then
+				value = "n/a"
+			end
+		end
+		local prev = lastValues[address]
+		lastValues[address] = value
+           	if prev ~= nil and value &lt; prev then
+                	maxValues[address] = prev
+             	end
+             	local max = maxValues[address]
+
+             	--output = output..paddedLabel(label,longestLabel).." "..f(value, factor, 5)
+		output = string.format("%s%s %s",output,
+			paddedLabel(label, longestLabel),
+			f(value, factor, 5))
+
+		-- Difference
+             	if type == "diff" then
+                	if value ~= prev and prev ~= nil then
+				local diff = value - prev
+				if diff &gt; 0 then
+					output = output.." (+"..f(diff, factor, 1)..")"
+				else
+					output = output.." ("..f(diff, factor, 1)..")"
+				end
+			end
+
+			-- Percentage
+			if limit ~= nil and value &gt; 0 then
+				output = string.format("%s %s",output,"["..math.floor(value / limit * 100).."%]")
+			end
+
+			if max ~= nil and maxEnabled then
+				output = output.." ["..f(max, factor, 1).."]"
+			end
+		elseif type == "history" then
+			local h = history[address]
+			if h == nil then
+				h = {}
+			end
+			if value ~= prev then
+				table.insert(h,1,value)
+			end
+			if #h &gt; 5 then
+				table.remove(h,#h)
+			end
+			local hText = ""
+			for k,v in ipairs(h) do
+				if k &gt; 1 then
+					if k &gt; 2 then
+						hText = hText.." &lt; "
+					end
+					hText = hText..comma_value(v)
+				end
+			end
+			history[address] = h
+			if hText:len() &gt; 0 then
+				output = output.." ["..hText.."]"
+			end
+             	elseif value ~= prev and v.showChange then
+                	output = output.." (changed)"
+             	end
+             	output = output.."\n"
+         end
+         write(output, file)
+         return output
+end
+
+function writeThreads(file)
+         --local activeThreads = getThreads("0xA8B42C", 50)
+         local activeThreads = getThreads("0xA8B42C", 50) -- A92CF0
+         local inactiveThreads = getThreads("0xA8B428", 3)
+         local output = activeThreads.."\n\n"..inactiveThreads
+         write(output, file)
+         return output
+end
+
+function getThreads(startPointer, amount)
+         local addr = getInteger(startPointer)
+         local output = ""
+         for i = 0, amount, 1 do
+             if addr == nil then
+                break
+             end
+             local threadname = readString(addr+8, 10, false)
+             if threadname == nil then
+                output = output.."("..i.." threads)"
+                break
+             end
+             output = output..threadname.." "
+             addr = readInteger(addr)
+         end
+         return output
+end
+
+function write(output, file)
+
+
+         -- Only write to file if enabled and changed
+         if file == nil or not enabled("WritingEnabledCheckbox") then
+            return
+         end
+         if output == lastOutput[file] then
+            return
+         end
+         lastOutput[file] = output
+         debug("test")
+         local f = io.open(file,'w')
+         f:write(output)
+         f:close()
+
+end
+
+
+-- ### Utility functions
+
+function comma_value(amount)
+  local formatted = amount
+  while true do
+    formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+    if (k==0) then
+      break
+    end
+  end
+  return formatted
+end
+
+function f(value, factor, pad)
+	if type(value) ~= "number" then
+		return value
+	end
+	value = round(value*factor, 1)
+	if factor ~= 1 then
+		return comma_value(string.format("%"..pad..".1f", value))
+	end
+	return comma_value(value)
+end
+
+function round(num, idp)
+  local mult = 10^(idp or 0)
+  return math.floor(num * mult + 0.5) / mult
+end
+
+function convertAddress(decimal)
+    return '0x'..string.format('%x', decimal)
+end
+
+-- ### Main
+
+local settings
+local booleanSettings = {
+      "WritingEnabledCheckbox",
+      "WriteDupingValuesCheckbox",
+      "WriteOtherValuesCheckbox",
+      "EnableF6Hotkey",
+      "AutoAttachCheckbox",
+      "DebugOutputCheckbox",
+}
+local stringSettings = {
+      {"DupingValuesFile","E:/v3.txt"},
+}
+function loadSettings()
+    settings = getSettings("gtasa")
+    for _,v in ipairs(booleanSettings) do
+        setEnabled(v, settings.Value[v])
+    end
+    for _,v in ipairs(stringSettings) do
+        local value = settings.Value[v[1]]
+        if value == nil or value == "" then
+           value = v[2]
+        end
+        GTASAForm[v[1]].Text = value
+    end
+end
+
+function saveSettings()
+    for _,v in ipairs(booleanSettings) do
+        settings.Value[v] = enabled(v)
+    end
+    for _,v in ipairs(stringSettings) do
+        settings.Value[v[1]] = GTASAForm[v[1]].Text
+    end
+end
+
+function enabled(element)
+    return GTASAForm[element]:getState() == cbChecked
+end
+
+function setEnabled(element, enabled)
+    if enabled == "1" then
+       GTASAForm[element]:setState(cbChecked)
+    else
+        GTASAForm[element]:setState(cbUnchecked)
+    end
+end
+
+function value(element)
+    return GTASAForm[element].Text
+end
+
+-- What is written to which file
+function timer()
+	--update(progressValues, "E:/v.txt", 0.001)
+	--update(statValues, "E:/v2.txt", 1)
+    local formOutput = ""
+    if enabled("WriteDupingValuesCheckbox") then
+        local file = value("DupingValuesFile")
+	    local result = update(phoneValues, file, 1)
+        formOutput = formOutput..result.."\n"
+    end
+    if enabled("WriteOtherValuesCheckbox") then
+	    local result = update(misc, "E:/misc.txt", 1)
+        formOutput = formOutput..result.."\n"
+    end
+    if enabled("WriteThreadsCheckbox") then
+       local result = writeThreads(nil)
+       formOutput = formOutput..result.."\n"
+    end
+    GTASAForm["TextOutputMemo"].Lines.Text = formOutput
+end
+
+local t
+local hotkey
+function init()
+    loadSettings()
+    t = createTimer(nil, false)
+    timer_onTimer(t, timer)
+    timer_setInterval(t,50)
+    timer_setEnabled(t, true)
+    hotkey = createHotkey(hotkeyF6, VK_F6)
+end
+
+function hotkeyF6()
+    if enabled("EnableF6Hotkey") then
+       local addr = adjustAddress("0xA49FC4")
+       if readInteger(addr) == 0 then
+          writeInteger(addr, 1)
+       else
+           writeInteger(addr, 0)
+       end
+     end
+end
+
+function autoAttach()
+    if not enabled("AutoAttachCheckbox") then
+       return
+    end
+    debug("check")
+    local processId = getProcessIDFromProcessName("gta_sa.exe")
+    if processId ~= getOpenedProcessID() and processId ~= nil then
+       openProcess("gta_sa.exe")
+       debug("Opened process")
+       detectVersion()
+    end
+end
+local autoAttachTimer = createTimer(nil, false)
+timer_onTimer(autoAttachTimer, autoAttach)
+timer_setInterval(autoAttachTimer, 5000)
+timer_setEnabled(autoAttachTimer, true)
+
+local versionsDef = {
+      {"008245BC",0,"1.0 EU/AUS or 1.0 US Hoodlum or 1.0 Downgraded"},
+      {"0082457C",0,"1.0 US"},
+      {"0082533C",0x2680,"1.01 EU/AUS or 1.01 Deviance or 1.01 Downgraded"},
+      {"008252FC",0x2680,"1.01 US"},
+      {"0085EC4A",0x75130,"3.0 Steam"},
+      {"0085DEDA",0x75770,"1.01 Steam?"}
+}
+local gameVersion = "Version unknown"
+
+
+function detectVersion()
+         local target = 38079
+         for _,v in ipairs(versionsDef) do
+             if readInteger(v[1]) == target then
+                gameVersion = v[3]
+                gameVersionOffset = v[2]
+             end
+         end
+         GTASAForm.GameVersion.Caption = "Game Version: "..gameVersion
+end
+
+form_show(GTASAForm)
+init()
+
+
+
+
+GTASAForm.onClose = function(sender)
+    debug("closed")
+    object_destroy(t)
+    object_destroy(autoAttachTimer)
+    hotkey.destroy()
+    saveSettings()
+    --closeCE()
+    return caHide
+end
+
+
+
+function AddEntryButtonClick(sender)
+    local input = GTASAForm.AddEntryInput.Text
+    local address = getVarAddress(input)
+    if address ~= nil then
+       local addresslist = getAddressList()
+       local record = addresslist:createMemoryRecord()
+       memoryrecord_setAddress(record, convertAddress(address))
+       memoryrecord_setDescription(record, input)
+    end
+end
+
+function AttachButtonClick(sender)
+    openProcess("gta_sa.exe")
+    detectVersion()
+end
+
+function getPath(str,sep)
+    sep = sep or '/'
+    return str:match("(.*"..sep..")")
+end
+
+function ChangeDupingValuesFileClick(sender)
+    dialog = createSaveDialog(self)
+    dialog.Title = "Select file to write to (currently: "..value("DupingValuesFile")..")"
+    dialog.InitialDir = getPath(value("DupingValuesFile"),"\\")
+    dialog.execute()
+    local file = dialog.FileName
+    if file ~= nil and file ~= "" then
+       GTASAForm.DupingValuesFile.Text = file
+    end
+end
+</LuaScript>
+</CheatTable>

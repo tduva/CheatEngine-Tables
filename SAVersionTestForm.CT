@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="18">
+  <Forms>
+    <GTASATestForm Class="TCEForm" Encoding="Ascii85">b(@3)8!-?toowSxN.wo#.LwAma1NUiA.gJo2.}3?Vi!18CY}f#c0G}pRS4(vd,4b?iXX+#myk9RK6(1!H+Yld=/yhj@=BgOz5Y4sbn^0XMqv!by6VFvjI8(kLN7p$C*Rr:UW[yEFR9(2VJF[Nir=ciD@by^!pQDGo4jPM!;3+%LD?I(Mp-Yd#ARMVigb_KS!Q:aHJqT1qyQJ(=xC[86Tdc=E6]t7G#[CN=ylgC3tPj?b=k0[gB$%Ft.KY2#Y@G,;^q[lpx9HD^J+B@KU+prn2j2r:7jR8Gx(U3j8o@,vJKh1lnP8cvRbOKsnG3fjYBZzgpDo#X=PnRfquP0ktM+};hyv_?)E5?:lHO5[@oq9[g-lzgf5(x(/*)7r*OYcXhAF:DR.F4+1tUnZzG1fsPfwdqDZoIshr[ljWrh[D50NQt,)7ESFF^d(He6iz)$xU.ljdh81w[$Y*Hk?ViczymFmX@jz$J-E_K}Ta4{HHqEV0e!$1qr]ClaD1p</GTASATestForm>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"$108 (1.0)"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00A49B10"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>0xa49b10</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"$480 $X_CESAR_HOUSE"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00A4A0E0"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>0xa4a0e0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>gta_sa.exe+64A0E0</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>function toHexString(decimal)
+    return '00'..string.upper(string.format('%x', decimal))
+end
+
+function setText(text)
+         GTASATestForm["Output"].Lines.Text = text
+end
+
+function addLine(text)
+         local current = GTASATestForm["Output"].Lines.Text
+         GTASATestForm["Output"].Lines.Text = current..text.."\n"
+end
+
+function tryConnect()
+         if getOpenedProcessID() == 0 then
+            openProcess("gta_sa.exe")
+         end
+         if getOpenedProcessID() == 0 then
+            openProcess("gta-sa.exe")
+         end
+         if getOpenedProcessID() == 0 then
+            setText("Failed to open process. Start the game and try again.")
+         else
+             gatherInformation()
+         end
+         --setText(getOpenedProcessID())
+end
+
+local moduleAddress
+function scanMemory()
+         addLine("")
+         addLine("## Memory Scan ##")
+         local ms = createMemScan()
+         ms.firstScan(soExactValue,vtDword,0,1155605135,0,0, 0xffffffffffffffff, "", fsmNotAligned, "1", false, false, false, false)
+         ms.waitTillDone()
+
+         local f = createFoundList(ms);
+         f.initialize();
+
+         -- Address of $480 in 1.0 in module (without 00400000)
+         local refAddr = tonumber("0064A0E0", 16)
+         for i=0,f.Count-1 do
+             local fa = f.Address[i]
+             local faInt = tonumber(fa, 16)
+             local addrInModule = faInt - moduleAddress
+             local offset = addrInModule - refAddr
+             addLine("$480 found: "..fa)
+             addLine("\tin module: "..toHexString(addrInModule))
+             addLine("\toffset: "..toHexString(offset))
+         end
+         if f.Count == 0 then
+            addLine("Nothing found. Make sure you started a New Game (CJ standing in front of the bicycle).")
+         end
+
+         f.destroy()
+         ms.destroy()
+end
+
+-- 1.0 0xa49b10 $108: Float 0.0625 = Int 1031798784
+
+function gatherInformation()
+         setText("")
+         local moduleSize = getModuleSize("gta_sa.exe")
+         local process = "gta_sa.exe"
+         if moduleSize == nil then
+            process = "gta-sa.exe"
+            moduleSize = getModuleSize("gta-sa.exe")
+         end
+         addLine("Process: "..process)
+         addLine("Module Memory Size: "..moduleSize)
+         moduleAddress = getAddress(process)
+         addLine("Module Address: "..toHexString(moduleAddress))
+         detectVersion()
+         scanMemory()
+end
+
+local versionsDef = {
+      {"008245BC",0,"1.0 EU/AUS or 1.0 US Hoodlum or 1.0 Downgraded"},
+      {"0082457C",0,"1.0 US"},
+      {"0082533C",0x2680,"1.01 EU/AUS or 1.01 Deviance or 1.01 Downgraded"},
+      {"008252FC",0x2680,"1.01 US"},
+      {"0085EC4A",0x75130,"3.0 Steam"},
+      {"0085DEDA",0x75770,"1.01 Steam?"}
+}
+local gameVersion = "Version unknown"
+
+function detectVersion()
+         local target = 38079
+         for _,v in ipairs(versionsDef) do
+             if readInteger(v[1]) == target then
+                gameVersion = v[3]
+                gameVersionOffset = v[2]
+             end
+         end
+         addLine("Detected Version: "..gameVersion)
+end
+
+form_show(GTASATestForm)
+tryConnect()
+
+--print("test");
+--print(getModuleSize("mirc.exe"));
+
+GTASATestForm.onClose = function(sender)
+    closeCE()
+    return caHide
+end
+</LuaScript>
+</CheatTable>
