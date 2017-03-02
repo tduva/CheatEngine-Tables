@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CheatTable CheatEngineTableVersion="18">
   <Forms>
-    <DSDCForm Class="TCEForm" Encoding="Ascii85">y[Mf=):Zgq-K1@OX4BMZD^z-5m;38F6+n_)1+oFc8nH^^CZ_i3G[G7n@bxq@Ww[:Acqrl_b@d6k-H@CSVjnx-[d7nvTOA;LK6$R$*[6kbS_2S(7Jq3?Va3$9jrIrd=;weBs!cYE-MaN%:Bd9LnuRyaCsF)92-Cn@kT}3$Bf!ivEfPlz:!q5j5V8GwBm3O1NBoat+Jt^}58+RjL.ro]c!Vx_7x:%gED_wFLal#Gedb4Z._MQ9a4ip/U]ckDMR:m?Q1p2/nm?G.-qImqjI5s(vo}C:+sZ(O5FExOra,X_p2ua%qo4D5)a@FjwnhsF$xIsuJYK@:x+[Tf33Y*kHrPqTUGcSwZsX.Qk1D8X!.ZDjtbqex-FU-8+p4C8Ngxg5L{FA?B5@K2O5L/)-y*zF[30XnEc35L/{WHvzoP=A#lbK##pWuJrOl!w^Z62r6+kg:f/XfzJ#jn5O9,iIrG)C6wuzbSSTsLID/VOW(OI^a4{hd{[l!/cMxSy/KOb:#biu7+8gopOQn5%#s9wU7,LG{Q:_6Nl^y(#j$8tHZa;+,09#}xgtMdhiF$}P;H#KNR0xd26A:ycKf^bM5RDv.@tTlsPYE#W?D$]=asKUl6R_qB{X_*tZp[E(_Nz#]cxPcXgttS)IxKETK^:F,cw3$3hNxeL[ncM?dBcN4yhz];$kJfsOio}[ko;N%*yT4^x3P9A-arS=s;aBtDgAyEYUkGoOx]3WPuO-?ZXR[Q^z%OU1wS09Z^0FKQax*kH=$_p)%XS.oiWB[-</DSDCForm>
+    <DSDCForm Class="TCEForm" Encoding="Ascii85">y[L)3,AtJ]O#(p48C8sCXqR}c*QhUBqi#w7wG{F8K$:{8lN:@df^lz)d4w,eGF_rt]cSo#.Dl(gD3!Vj]1tbw-_.#AVk0!4j-Fd^Z#bfCWe.WpPyVQnVad)6wdMzi9zt(T:A5pLdE-6]cxe8tSsq@Vh=3@B0cNo}quXTT4gmAe[2]yxU;9Bz0pa]gPWE?d9=27jLB#D+l*z]ag6?0bhm[5t0OZ+^j{p#kVs-CX#3S-BBzTcP.DzAF3%a^0rVC{qW=vo7mS3xdH;@*Nr;mz$@iHZ)yR}PKfX{7G6o{E-@SDWQbaNgrYgV=!#%bVKM4C93@DP^w8:[91vH.j?jeQ{mC*XPG94^tv*IbQe1djezh#^pjH69f+t=tI.D+/,04OeVuIew#Ze0_^Q8#;{iT;(Rk;]GbIgos4?vGt@_kq#7YYY5rG=HDg0afXahHrev@mg[D,^UcdY4T;}(W@)?mlF^BXx:a}.$^GDQBk#82R($+xW{,xOnowq!u%xzhJXHFRU623I/?Kptt]50mwe/,Bwu03fQyj=QUIm(XprvKrr#nsc;qur!H5jvCrR,PYO+6A.j8C..DjSzlA-J5nOOd6bD2#FoxDXxKhdWp?+n}Rq$NNNS#:rN!@P0*4Q:7;n(^[qwl!u!GQ7xuZ##CuCCQ;g/bIM;D=f#f%Edf/br{[Vd4j%{V-/0?;^X%%X*CTPQ]$D5Vccx3O2l5?)TFX}w!oQ:#O0MU@-/_phSXmRltyCxa4F</DSDCForm>
   </Forms>
   <CheatEntries>
     <CheatEntry>
@@ -18,7 +18,13 @@
   </CheatEntries>
   <UserdefinedSymbols/>
   <LuaScript>function debug(text)
+    -- Only for debugging
     --print(text)
+end
+
+function closeStuff()
+    -- Only for standalone version
+    --closeCE()
 end
 
 local currentProcess
@@ -50,18 +56,18 @@ function getDeathCount()
 end
 
 function timer()
-    debug("test")
-    autoAttach()
     local count = getDeathCount()
     if count == nil then
         setInfo("No game found.")
-        return
+        autoAttach()
+        count = 0
+    else
+        setInfo("Value: "..count)
     end
     if enabled("WritingEnabledCheckbox") then
-        local prefix = DSDCForm.Prefix.Text
-        write(prefix..count, value("FileName"))
+        local output = DSDCForm.Prefix.Text
+        write(output:gsub("%$d", count), value("FileName"))
     end
-    setInfo("Value: "..count)
 end
 
 function init()
@@ -81,7 +87,7 @@ function autoAttach()
 end
 
 function tryAttach(process, force)
-    --debug("Check "..process)
+    debug("Check "..process)
     local processId = getProcessIDFromProcessName(process)
     if (processId ~= getOpenedProcessID() or force) and processId ~= nil then
        openProcess(process)
@@ -93,8 +99,7 @@ end
 DSDCForm.onClose = function(sender)
     object_destroy(t)
     saveSettings()
-    -- Only for standalone version
-    --closeCE()
+    closeStuff()
     return caHide
 end
 
@@ -130,7 +135,7 @@ local booleanSettings = {
 
 local stringSettings = {
     {"FileName",""},
-    {"Prefix",""}
+    {"Prefix","Deaths: $d"}
 }
 
 function value(element)
