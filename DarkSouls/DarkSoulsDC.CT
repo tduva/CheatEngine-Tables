@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="18">
+  <Forms>
+    <DSDCForm Class="TCEForm" Encoding="Ascii85">y[Mf=):Zgq-K1@OX4BMZD^z-5m;38F6+n_)1+oFc8nH^^CZ_i3G[G7n@bxq@Ww[:Acqrl_b@d6k-H@CSVjnx-[d7nvTOA;LK6$R$*[6kbS_2S(7Jq3?Va3$9jrIrd=;weBs!cYE-MaN%:Bd9LnuRyaCsF)92-Cn@kT}3$Bf!ivEfPlz:!q5j5V8GwBm3O1NBoat+Jt^}58+RjL.ro]c!Vx_7x:%gED_wFLal#Gedb4Z._MQ9a4ip/U]ckDMR:m?Q1p2/nm?G.-qImqjI5s(vo}C:+sZ(O5FExOra,X_p2ua%qo4D5)a@FjwnhsF$xIsuJYK@:x+[Tf33Y*kHrPqTUGcSwZsX.Qk1D8X!.ZDjtbqex-FU-8+p4C8Ngxg5L{FA?B5@K2O5L/)-y*zF[30XnEc35L/{WHvzoP=A#lbK##pWuJrOl!w^Z62r6+kg:f/XfzJ#jn5O9,iIrG)C6wuzbSSTsLID/VOW(OI^a4{hd{[l!/cMxSy/KOb:#biu7+8gopOQn5%#s9wU7,LG{Q:_6Nl^y(#j$8tHZa;+,09#}xgtMdhiF$}P;H#KNR0xd26A:ycKf^bM5RDv.@tTlsPYE#W?D$]=asKUl6R_qB{X_*tZp[E(_Nz#]cxPcXgttS)IxKETK^:F,cw3$3hNxeL[ncM?dBcN4yhz];$kJfsOio}[ko;N%*yT4^x3P9A-arS=s;aBtDgAyEYUkGoOx]3WPuO-?ZXR[Q^z%OU1wS09Z^0FKQax*kH=$_p)%XS.oiWB[-</DSDCForm>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>DARKSOULS.exe+0F78700</Address>
+      <Offsets>
+        <Offset>5C</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>function debug(text)
+    --print(text)
+end
+
+local currentProcess
+local t
+local lastOutput = {}
+
+function write(output, file)
+    -- Only write to file if enabled
+    if file == nil then
+        return
+    end
+    -- Only write to file if changed
+    if output == lastOutput[file] then
+        return
+    end
+    lastOutput[file] = output
+    local f,e = io.open(file,'w')
+    if f ~= nil then
+        f:write(output)
+        f:close()
+        DSDCForm.ErrorOutput.Caption = ""
+    else
+        DSDCForm.ErrorOutput.Caption = "Write error ("..e..")"
+    end
+end
+
+function getDeathCount()
+    return readInteger("[DARKSOULS.exe+0F78700]+5C")
+end
+
+function timer()
+    debug("test")
+    autoAttach()
+    local count = getDeathCount()
+    if count == nil then
+        setInfo("No game found.")
+        return
+    end
+    if enabled("WritingEnabledCheckbox") then
+        local prefix = DSDCForm.Prefix.Text
+        write(prefix..count, value("FileName"))
+    end
+    setInfo("Value: "..count)
+end
+
+function init()
+    loadSettings()
+    t = createTimer(nil, false)
+    timer_onTimer(t, timer)
+    timer_setInterval(t, 5000)
+    timer_setEnabled(t, true)
+end
+
+function setInfo(text)
+    DSDCForm.Info.Caption = text
+end
+
+function autoAttach()
+    tryAttach("DARKSOULS.exe")
+end
+
+function tryAttach(process, force)
+    --debug("Check "..process)
+    local processId = getProcessIDFromProcessName(process)
+    if (processId ~= getOpenedProcessID() or force) and processId ~= nil then
+       openProcess(process)
+       currentProcess = process
+       setInfo("Opened process")
+    end
+end
+
+DSDCForm.onClose = function(sender)
+    object_destroy(t)
+    saveSettings()
+    -- Only for standalone version
+    --closeCE()
+    return caHide
+end
+
+function SelectFilePath(setting)
+    dialog = createSaveDialog(self)
+    dialog.Title = "Select file to write to (currently: "..value(setting)..")"
+    dialog.InitialDir = getPath(value(setting),"\\")
+    dialog.execute()
+    local file = dialog.FileName
+    if file ~= nil and file ~= "" then
+       DSDCForm[setting].Text = file
+    end
+end
+
+function getPath(str,sep)
+    sep = sep or '/'
+    return str:match("(.*"..sep..")")
+end
+
+function SelectFileClick(sender)
+    debug("select")
+    SelectFilePath("FileName")
+end
+
+function ForceRefreshClick(sender)
+    lastOutput = {}
+    timer()
+end
+
+local booleanSettings = {
+    "WritingEnabledCheckbox"
+}
+
+local stringSettings = {
+    {"FileName",""},
+    {"Prefix",""}
+}
+
+function value(element)
+    return DSDCForm[element].Text
+end
+
+function loadSettings()
+    settings = getSettings("dsdcform")
+    for _,v in ipairs(booleanSettings) do
+        setEnabled(v, settings.Value[v])
+    end
+    for _,v in ipairs(stringSettings) do
+        local value = settings.Value[v[1]]
+        if value == nil or value == "" then
+           value = v[2]
+        end
+        DSDCForm[v[1]].Text = value
+    end
+end
+
+function saveSettings()
+    for _,v in ipairs(booleanSettings) do
+        settings.Value[v] = enabled(v)
+    end
+    for _,v in ipairs(stringSettings) do
+        settings.Value[v[1]] = DSDCForm[v[1]].Text
+    end
+end
+
+function enabled(element)
+    return DSDCForm[element]:getState() == cbChecked
+end
+
+function setEnabled(element, enabled)
+    if enabled == "1" then
+        DSDCForm[element]:setState(cbChecked)
+    else
+        DSDCForm[element]:setState(cbUnchecked)
+    end
+end
+
+form_show(DSDCForm)
+init()
+</LuaScript>
+</CheatTable>
