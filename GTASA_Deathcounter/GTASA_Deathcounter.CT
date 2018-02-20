@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="18">
+  <Forms>
+    <GTASADeathcounterForm Class="TCEForm" Encoding="Ascii85">rBzRl)m*g,T4:$t8([qG2a[fmFD9E,Z:4op+*?;[vNUob)V:{y8?e4b42Jy#eh5E;-@Hs{zl0a3oihD^.AZ6lOy7IIKkv:!PXi%mcyVevxOYL;P3zL;j5[B*xbM/c#DT?9*jnKv^kv_whhXM(^TtF9y3o6o,BopIub*+,Ocp$#k=}j+XpcH{zC.s.0YqFSTk]*V7scQ]FW=qVA%hT)JCW.CHVQn5!A}%aIHRF=IA#G4qFFB?)-6Fbnbu5,X_0%-c9zomf$CR4yg=M,HtG)U4wwf[LsbXX,(ISVi3@^,9M2QJ/[KAW4fesEcj/aR,EIe]TB2!v/-tLm1vaPlwNR2FSCEq09IW[a#ba^]f0{8%iVG^Tc_*F+gW[LigDhE;a!zHBv^{*KNy[ckl-WzGM(^yyLFRF_N#.o^lyTIgI{einE!+{;4}eI@+C$g5;+?EKJ9ej*g$Ym/RS@HE7@75Sh=SQdKS*%4PE}zSjvva3wk,AUhJ:Z9Ohd{+#f}:5VY;PUKSPR[Q}w)k,g)q:-zo4}QZlnp(pBpYk^kF4Y$+coH]0k?^VPggCkpl]E@SAY,a7RmId}:6n[0]t)Qt7/Hfn_$^i;XR%IRMk_MveHpE9^e%bO_BS4zH[PH0JVLs0In#D$0,jvy4a#CJy=;;!oDWU{SIRLh@][epNv4D6F:2Ie3VtIVC7tuj[{oOxQyk3@3#%H,UGtyWR%mlSTS.GWz2KD!,d+TIEk8OeiP-P@Ki:SJF!ywh6Ra]c6AbpKvb4p?m4JJFK4Ue.G}UA*]S9^</GTASADeathcounterForm>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"No description"</Description>
+      <LastState Value="1" Activated="0" RealAddress="0A2A5F00"/>
+      <Color>80000008</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>gta_sa.exe+77CD98</Address>
+      <Offsets>
+        <Offset>530</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>----------------------
+-- GTA:SA Utilities --
+----------------------
+GTASAUtil = {}
+
+-- The following functions should be added to return true if these features
+-- should be enabled:
+--
+-- self:isAutoAttachEnabled()
+-- self:gameVersionDetected()
+-- self:isDebugEnabled()
+--
+-- The following function is called when the game version has been detected:
+--
+-- self:gameVersionDetected(self.gameVersionDescription)
+
+
+-- What to add to the relative 1.0 address to get the address for the current
+-- version (e.g. also contains the process address, usually 0x400000).
+GTASAUtil.gameVersionOffset = 0
+
+-- Contains special addresses, that require more than an offset to work.
+-- The key is the normal 1.0 address, the value the absolute address.
+GTASAUtil.gameVersionAddr = {}
+
+GTASAUtil.versionsDef = {
+    {"008245BC",18313216,0,"1.0","1.0"},
+    {"0082457C",18313216,0,"1.0","1.0"},
+    {"0082533C",34471936,0x2680,"1.01","1.01"},
+    {"008252FC",34471936,0x2680,"1.01","1.01"},
+    {nil,17985536,0x2680,"2.0","2.0"},
+    {"0085EC4A",9691136,0x75130,"3.0 Steam","3.0 Steam"},
+    {"0085DEDA",0,0x75770,"1.01 Steam","1.01 Steam?"},
+    {nil,9981952,0x77970,"Steam","Steam"}
+}
+
+GTASAUtil.gameVersion = ""
+GTASAUtil.gameVersionDescription = ""
+
+function GTASAUtil:new()
+    local object = {}
+    setmetatable(object, self)
+    self.__index = self
+    return object
+end
+
+function GTASAUtil:debug(text)
+    if self:isDebugEnabled() then
+        print("[GTASAUtil] "..text)
+    end
+end
+
+function GTASAUtil:init()
+    self.autoAttachTimer = createTimer(nil, false)
+    timer_onTimer(self.autoAttachTimer, function() self:autoAttach() end)
+    timer_setInterval(self.autoAttachTimer, 5000)
+    timer_setEnabled(self.autoAttachTimer, true)
+end
+
+function GTASAUtil:cleanUp()
+    self:debug("Cleanup")
+    object_destroy(self.autoAttachTimer)
+end
+
+function GTASAUtil:adjustAddress(addr)
+    if type(addr) == "string" then
+        addr = tonumber(addr)
+    end
+    if addr == nil then
+        return nil
+    end
+    if self.gameVersionAddr[addr] ~= nil then
+        return self.gameVersionAddr[addr]
+    end
+    return addr+self.gameVersionOffset
+end
+
+function GTASAUtil:getInteger(addr)
+    return readInteger(self:adjustAddress(addr))
+end
+
+function GTASAUtil:getByte(addr)
+    return readBytes(self:adjustAddress(addr), 1, false)
+end
+
+function GTASAUtil:getFloat(addr)
+    return readFloat(self:adjustAddress(addr))
+end
+
+function GTASAUtil:autoAttach()
+    if self:isAutoAttachEnabled() then
+       self:attach(false)
+    end
+end
+
+function GTASAUtil:attach(force)
+    self:tryAttach("gta_sa.exe", force)
+    self:tryAttach("gta-sa.exe", force)
+end
+
+function GTASAUtil:tryAttach(process, force)
+    --self:debug("Check "..process)
+    local processId = getProcessIDFromProcessName(process)
+    if (processId ~= getOpenedProcessID() or force) and processId ~= nil then
+       openProcess(process)
+       self.currentProcess = process
+       self:debug("Opened process "..process)
+       self:detectVersion()
+    end
+end
+
+function GTASAUtil:detectVersion()
+    self.gameVersion = ""
+    self.gameVersionOffset = 0
+    self.gameVersionAddr = {}
+
+    -- Try to detect version by address
+    -- (this doesn't work when CD hasn't been checked yet)
+    local target = 38079
+    for _,v in ipairs(self.versionsDef) do
+        if v[1] ~= nil and readInteger(v[1]) == target then
+            self.gameVersion = v[4]
+            self.gameVersionDescription = v[5].." [detected by address]"
+            self.gameVersionOffset = v[3] + getAddress(self.currentProcess)
+        end
+    end
+
+    -- Detect by module size if no version detected yet
+    if self.gameVersion == "" then
+        local moduleSize = getModuleSize(self.currentProcess)
+        for _,v in ipairs(self.versionsDef) do
+            if v[2] ~= 0 and moduleSize == v[2] then
+                self.gameVersion = v[4]
+                self.gameVersionDescription = v[5].." [detected by module size]"
+                self.gameVersionOffset = v[3] + getAddress(self.currentProcess)
+            end
+        end
+    end
+
+    -- Special Addresses
+    if self.gameVersion == "Steam" then
+        -- Steam Version needs more than an offset for some values
+        local base = getAddress(self.currentProcess)
+        self.gameVersionAddr[0x77CD98] = 0x8100D0 + base
+    end
+
+    if self.gameVersion == "" then
+        self.gameVersionDescription = "Version Unknown"
+    end
+
+    self:gameVersionDetected(self.gameVersionDescription)
+end
+
+---------------------
+-- Settings Helper --
+---------------------
+
+SettingsHelper = {}
+
+-- Setting name should be the name of the element in the form
+-- List of boolean setting names
+SettingsHelper.booleanSettings = {}
+
+-- List of string settings, each as {"settingName", "default setting"}
+SettingsHelper.stringSettings = {}
+
+---
+-- Creates a new SettingsHelper object.
+--
+-- @param  string  settingsName: The name these settings are stored under
+-- @param  form    form: The GUI where the setting elements are on
+function SettingsHelper:new(settingsName, form)
+    local object = {}
+    setmetatable(object, self)
+    self.__index = self
+    object.settingsName = settingsName
+    object.form = form
+    return object
+end
+
+function SettingsHelper:load()
+    self.settings = getSettings(self.settingsName)
+    for _,v in ipairs(self.booleanSettings) do
+        self:setEnabled(v, self.settings.Value[v])
+    end
+    for _,v in ipairs(self.stringSettings) do
+        local value = self.settings.Value[v[1]]
+        if value == nil or value == "" then
+           value = v[2]
+        end
+        self.form[v[1]].Text = value
+    end
+end
+
+function SettingsHelper:save()
+    for _,v in ipairs(self.booleanSettings) do
+        self.settings.Value[v] = self:isEnabled(v)
+    end
+    for _,v in ipairs(self.stringSettings) do
+        self.settings.Value[v[1]] = self:getValue(v[1])
+    end
+end
+
+function SettingsHelper:isEnabled(element)
+    return self.form[element]:getState() == cbChecked
+end
+
+function SettingsHelper:setEnabled(element, enabled)
+    if enabled == "1" then
+        self.form[element]:setState(cbChecked)
+    else
+        self.form[element]:setState(cbUnchecked)
+    end
+end
+
+function SettingsHelper:getValue(element)
+    return self.form[element].Text
+end
+
+function SettingsHelper:setValue(element, text)
+    self.form[element].Text = text
+end
+
+function SettingsHelper.getPath(str,sep)
+    sep = sep or '/'
+    return str:match("(.*"..sep..")")
+end
+
+function SettingsHelper:selectFilePath(sender, setting)
+    local dialog = createSaveDialog(sender)
+    local value = self:getValue(setting)
+    dialog.Title = "Select file to write to (currently: "..value..")"
+    dialog.InitialDir = SettingsHelper.getPath(value,"\\")
+    dialog.execute()
+    local file = dialog.FileName
+    if file ~= nil and file ~= "" then
+       self.form[setting].Text = file
+    end
+end
+
+--------------------------------
+-- Initialize Settings Helper --
+--------------------------------
+
+local settings = SettingsHelper:new("gtasa_deathcounter", GTASADeathcounterForm)
+
+settings.booleanSettings = {
+    "WritingEnabled",
+    "DebugEnabled"
+}
+
+settings.stringSettings = {
+    {"CounterFile", "C:\\ce_deathcounter.txt"},
+    {"OutputFormat", "Deaths: $d"},
+    {"Deaths", "0"}
+}
+
+----------------------------
+-- Initialize GTA:SA Util --
+----------------------------
+
+local gtasa = GTASAUtil:new()
+gtasa.isAutoAttachEnabled = function()
+    return true
+end
+
+gtasa.gameVersionDetected = function(self, description)
+    GTASADeathcounterForm.GameVersion.Caption = "Game Version: "..description
+end
+
+gtasa.isDebugEnabled = function()
+    return settings:isEnabled("DebugEnabled")
+end
+
+gtasa:init()
+
+----------------
+-- Main Stuff --
+----------------
+
+local lastOutput
+
+function write(output, file)
+    -- Only write to file if enabled
+    if file == nil then
+        return
+    end
+    -- Only write to file if changed
+    if output == lastOutput then
+        return
+    end
+    lastOutput = output
+    local f,e = io.open(file,'w')
+    if f ~= nil then
+        f:write(output)
+        f:close()
+        GTASADeathcounterForm.ErrorOutput.Caption = ""
+    else
+        GTASADeathcounterForm.ErrorOutput.Caption = "Write error ("..e..")"
+    end
+end
+
+local prevState
+
+function getState()
+    local ped = gtasa:getInteger("0x77CD98")
+    if ped == nil then
+        return nil
+    end
+    return readInteger(ped+0x530)
+end
+
+function timerCallback()
+    local state = getState()
+    if state == 55 and prevState ~= 55 then
+        local deaths = tonumber(settings:getValue("Deaths"))
+        deaths = deaths + 1
+        settings:setValue("Deaths", tostring(deaths))
+    end
+    prevState = state
+
+    fileOutput()
+end
+
+function fileOutput(force)
+    -- File Output
+    if settings:isEnabled("WritingEnabled") or force then
+        local deaths = tonumber(settings:getValue("Deaths"))
+        local output = settings:getValue("OutputFormat")
+        write(output:gsub("%$d", deaths), settings:getValue("CounterFile"))
+    end
+end
+
+local timer
+
+function init()
+    settings:load()
+
+    timer = createTimer(nil, false)
+    timer_onTimer(timer, timerCallback)
+    timer_setInterval(timer, 1000)
+    timer_setEnabled(timer, true)
+end
+
+---------
+-- GUI --
+---------
+
+form_show(GTASADeathcounterForm)
+init()
+
+GTASADeathcounterForm.onClose = function(sender)
+    gtasa:debug("Closed")
+    object_destroy(timer)
+    gtasa:cleanUp()
+    settings:save()
+    -- Only for standalone version
+    --closeCE()
+    return caHide
+end
+
+function SelectFileButtonClick(sender)
+    settings:selectFilePath(sender, "CounterFile")
+end
+
+function ForceWriteButtonClick(sender)
+    lastOutput = nil
+    fileOutput(true)
+end
+</LuaScript>
+</CheatTable>
