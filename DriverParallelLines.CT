@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CheatTable CheatEngineTableVersion="18">
+  <Forms>
+    <Util Class="TCEForm" Encoding="Ascii85">b($JG!!Q)v-K36#!i36Y%#1_E3R]PYF%)hJAZF8.#*_6]ow)w}cm!si2_E]eMPjr4^pbAF[cb9T,pKO]#vfLIhv{/Tdb+Y$HoTiek5cUm8)fDOR6$1HRBns#hcGTGtH4A{]jl%WjqS5Zd,oC%cAMAYU268E;e?_REX:L_,@Ssqo.e3(5j3OEpGM.OKwaqwUJmfZw}g;?jQxq7h#Hq+EgY?{-ah:[-SN=aMod6@FKOe2c3!;-Yv:2Piqertls=Zy,59FJWxIvUmVmj$Z6$Wf=B?%FqsasMr{c}/5uL-dGj@ZeBpcyhIB39[5b[H</Util>
+  </Forms>
   <CheatEntries>
     <CheatEntry>
       <ID>0</ID>
@@ -77,6 +80,79 @@
       <VariableType>4 Bytes</VariableType>
       <Address>DriverParallelLines.exe+2E2A74</Address>
     </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="006E8E19"/>
+      <Color>80000008</Color>
+      <VariableType>Byte</VariableType>
+      <Address>DriverParallelLines.exe+2E8E19</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="006EA0F8"/>
+      <Color>80000008</Color>
+      <VariableType>Byte</VariableType>
+      <Address>DriverParallelLines.exe+2EA0F8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"No description"</Description>
+      <LastState Value="??" Activated="0" RealAddress="006FE45C"/>
+      <Color>80000008</Color>
+      <VariableType>Byte</VariableType>
+      <Address>DriverParallelLines.exe+2FE45C</Address>
+    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
+  <LuaScript>local lastOutput = {}
+local outputEnabled = true
+
+function write(output, file)
+         -- Only write to file if enabled and changed
+         if file == nil or not outputEnabled then
+            return
+         end
+         if output == lastOutput[file] then
+            return
+         end
+         lastOutput[file] = output
+         print("Written to file: "..output)
+         local f = io.open(file,'w')
+         f:write(output)
+         f:close()
+end
+
+function timer()
+         local currentMission = readString("DriverParallelLines.exe+2E72BC",20,false)
+         if currentMission == nil then
+            currentMission = "-"
+         end
+         Util.Mission.Caption = "Current mission: "..currentMission
+
+         write(currentMission, "E:/v.txt")
+end
+
+function init()
+    t = createTimer(nil, false)
+    timer_onTimer(t, timer)
+    timer_setInterval(t,500)
+    timer_setEnabled(t, true)
+    print("Started")
+end
+
+function stop()
+         object_destroy(t)
+         print("Stopped")
+end
+
+form_show(Util)
+init()
+
+Util.onClose = function(sender)
+             stop()
+             return caHide
+end
+</LuaScript>
 </CheatTable>
