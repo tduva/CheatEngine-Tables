@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="18">
+  <Forms>
+    <GTASAForm Class="TCEForm" Encoding="Ascii85">omN_O)=%3le3LEP86YGuJnb70G9-mgAKcC]wgM#6KvFDdXZo}}POKfvyY6aL/3Gsn:uhchtedgZG/vXib#CAJ(e@m2+_99_;fMR$xo[VwKI@;qhU1{HH7=+/*PLD(odKCdqV],eWAoaV:I/mFQGIX6cJW+gMq7]i$zVK0AJT+bXqXBnmx9nq(y5LCk:b_6HnZ/sv3WZG05r9WrPY-/,z5i^h/*8XV]2)Rz4h5w4XD:0?Z8sU;IP5k(m7LK$H].?92x7jhy6/*0/T$=?y:#GlinR8mr(tgNP}#,F$qD%c/C{KIE)Ey0DEg^YGHS9!beO9Hrp?664@E/52^,Z4[8tH,}nwIIqvHmcUC!u4?OL7GM=i:)*(^D*{3/!vz30o$abfiZO?=iOlLRbTcTu3G9]@_i5N0ACUTG@vIVm(QAc7PrP2f4@(k-^klEe;@WExGa]3p(Fed-O%t}of;h+8d/_6*T8}dc(#8W9}.i:MZ/EgQ;?/#3]0?P6g].yAD6HM)jP73DgW#.ZFEmP@6xvMnA-Po)R+v=-==T!o^^BH*knn4pZ:kPmr3KknyW(ZR:0Q2nJ-f}8498wwbqa0a7xh=]XEvqd9Utk}N=t46gFTfMBy;K?N=dzb!RnR}3p!Ys9G=C6x2m%5DVfPAiId*tYGu_#i:)#CZg0aB29+*}/UruNpY2%Dg)IawLonIpy2:X?!]i_:G5IwtK3ohMpbc$(J$FE*:_9EnoEC9q$(-*IN4?T;cU*:]kCp2p=f6]LtRVcYJOR{SeE=9sSTYabR.DLS?9-DRvQKAfw)BYweeRzn-H3{k3CsIZz5*q(nOHbFZKnVnlhDqP=2f0*9QBu*(f(sdU?ls[+q*V9]l9y%=Ib6j;3nC*zmn4YekfaHECPQj4N9e[=6J?s($W@LgN@W3*KEYop.nIf{aln$z8A))Hp6llLVbvT?@Rx8bDSBAFY_PtQJ?2OWIW,}VbkVNaj3c(CrERyfRi{Ek[D.c1Czq,1ry@@iEhDDfKR4f:j_%B0*nB:b:H-F^f4DB+IClQY$IgA-ovjzAj6M_zDE4D8wMc0UNrILvMUvb(ULp#TYQZ$QZ(u^KUK;/4p6a.8fNE,M*.ZhwWmFJZjE$CMIbN/(]ikm!;Q7y:]!1U:O_!X77L-ug!ATC[krHRkSXRiU/(%x{S_-1ztbYL</GTASAForm>
+  </Forms>
+  <CheatEntries/>
+  <UserdefinedSymbols/>
+  <LuaScript>function debug(text)
+    if settings:isEnabled("DebugOutputCheckbox") then
+        print(text)
+    end
+end
+
+----------------------
+-- GTA:SA Utilities --
+----------------------
+GTASAUtil = {}
+
+-- The following functions should be added to return true if these features
+-- should be enabled:
+--
+-- self:isAutoAttachEnabled()
+-- self:gameVersionDetected()
+-- self:isDebugEnabled()
+--
+-- The following function is called when the game version has been detected:
+--
+-- self:gameVersionDetected(self.gameVersionDescription)
+
+
+-- What to add to the relative 1.0 address to get the address for the current
+-- version (e.g. also contains the process address, usually 0x400000).
+GTASAUtil.gameVersionOffset = 0
+
+-- Contains special addresses, that require more than an offset to work.
+-- The key is the normal 1.0 address, the value the absolute address.
+GTASAUtil.gameVersionAddr = {}
+
+GTASAUtil.versionsDef = {
+    {"008245BC",18313216,0,"1.0","1.0"},
+    {"0082457C",18313216,0,"1.0","1.0"},
+    {"0082533C",34471936,0x2680,"1.01","1.01"},
+    {"008252FC",34471936,0x2680,"1.01","1.01"},
+    {nil,17985536,0x2680,"2.0","2.0"},
+    {"0085EC4A",9691136,0x75130,"3.0 Steam","3.0 Steam"},
+    {"0085DEDA",0,0x75770,"1.01 Steam","1.01 Steam?"},
+    {nil,9981952,0x77970,"Steam","Steam (not fully supported)"}
+}
+
+GTASAUtil.gameVersion = ""
+GTASAUtil.gameVersionDescription = ""
+
+function GTASAUtil:new()
+    local object = {}
+    setmetatable(object, self)
+    self.__index = self
+    return object
+end
+
+function GTASAUtil:debug(text)
+    if self:isDebugEnabled() then
+        print("[GTASAUtil] "..text)
+    end
+end
+
+function GTASAUtil:init()
+    self.autoAttachTimer = createTimer(nil, false)
+    timer_onTimer(self.autoAttachTimer, function() self:autoAttach() end)
+    timer_setInterval(self.autoAttachTimer, 5000)
+    timer_setEnabled(self.autoAttachTimer, true)
+end
+
+function GTASAUtil:cleanUp()
+    self:debug("Cleanup")
+    object_destroy(self.autoAttachTimer)
+end
+
+function GTASAUtil:adjustAddress(addr)
+    if type(addr) == "string" then
+        addr = tonumber(addr)
+    end
+    if addr == nil then
+        return nil
+    end
+    if self.gameVersionAddr[addr] ~= nil then
+        return self.gameVersionAddr[addr]
+    end
+    return addr+self.gameVersionOffset
+end
+
+function GTASAUtil:getInteger(addr)
+    return readInteger(self:adjustAddress(addr))
+end
+
+function GTASAUtil:getByte(addr)
+    return readBytes(self:adjustAddress(addr), 1, false)
+end
+
+function GTASAUtil:getFloat(addr)
+    return readFloat(self:adjustAddress(addr))
+end
+
+function GTASAUtil:autoAttach()
+    if self:isAutoAttachEnabled() then
+       self:attach(false)
+    end
+end
+
+function GTASAUtil:attach(force)
+    self:tryAttach("gta_sa.exe", force)
+    self:tryAttach("gta-sa.exe", force)
+end
+
+function GTASAUtil:tryAttach(process, force)
+    local processId = getProcessIDFromProcessName(process)
+    if processId ~= nil then
+       --self:debug("Check "..process..processId..getOpenedProcessID())
+    end
+    if (processId ~= getOpenedProcessID() or force) and processId ~= nil then
+       openProcess(process)
+       self.currentProcess = process
+       self:debug("Opened process "..process)
+       self:detectVersion()
+    end
+end
+
+function GTASAUtil:detectVersion()
+    self:debug("Detect version")
+    self.gameVersion = ""
+    self.gameVersionOffset = 0
+    self.gameVersionAddr = {}
+
+    -- Try to detect version by address
+    -- (this doesn't work when CD hasn't been checked yet)
+    local target = 38079
+    for _,v in ipairs(self.versionsDef) do
+        if v[1] ~= nil and readInteger(v[1]) == target then
+            self.gameVersion = v[4]
+            self.gameVersionDescription = v[5].." [detected by address]"
+            self.gameVersionOffset = v[3] + getAddress(self.currentProcess)
+        end
+    end
+
+    -- Detect by module size if no version detected yet
+    if self.gameVersion == "" then
+        local moduleSize = getModuleSize(self.currentProcess)
+        for _,v in ipairs(self.versionsDef) do
+            if v[2] ~= 0 and moduleSize == v[2] then
+                self.gameVersion = v[4]
+                self.gameVersionDescription = v[5].." [detected by module size]"
+                self.gameVersionOffset = v[3] + getAddress(self.currentProcess)
+            end
+        end
+    end
+
+    -- Special Addresses
+    if self.gameVersion == "Steam" then
+        -- Steam Version needs more than an offset for some values
+        local base = getAddress(self.currentProcess)
+        self.gameVersionAddr[0x68B42C] = 0x702D98 + base
+        self.gameVersionAddr[0x77CB84] = 0x80FD74 + base
+        self.gameVersionAddr[0x773460] = 0x8002AC + base
+    end
+
+    if self.gameVersion == "" then
+        self.gameVersionDescription = "Version Unknown"
+    end
+
+    self:gameVersionDetected(self.gameVersionDescription)
+end
+
+----------------------------
+-- Initialize GTA:SA Util --
+----------------------------
+
+gtasa = GTASAUtil:new()
+gtasa.isAutoAttachEnabled = function()
+    return true
+end
+
+gtasa.gameVersionDetected = function(self, description)
+    GTASAForm.GameVersion.Caption = "Game: "..description
+end
+
+gtasa.isDebugEnabled = function()
+    return settings:isEnabled("DebugOutputCheckbox")
+end
+
+
+---------------------
+-- Settings Helper --
+---------------------
+
+SettingsHelper = {}
+
+-- Setting name should be the name of the element in the form
+-- List of boolean setting names
+SettingsHelper.booleanSettings = {}
+
+-- List of string settings, each as {"settingName", "default setting"}
+SettingsHelper.stringSettings = {}
+
+---
+-- Creates a new SettingsHelper object.
+--
+-- @param  string  settingsName: The name these settings are stored under
+-- @param  form    form: The GUI where the setting elements are on
+function SettingsHelper:new(settingsName, form, saveFormLocation)
+    local object = {}
+    setmetatable(object, self)
+    self.__index = self
+    object.settingsName = settingsName
+    object.form = form
+    object.saveFormLocation = saveFormLocation
+    return object
+end
+
+function SettingsHelper:load()
+    self.settings = getSettings(self.settingsName)
+    for _,v in ipairs(self.booleanSettings) do
+        self:setEnabled(v, self.settings.Value[v])
+    end
+    for _,v in ipairs(self.stringSettings) do
+        local value = self.settings.Value[v[1]]
+        if value == nil or value == "" then
+           value = v[2]
+        end
+        self.form[v[1]].Text = value
+    end
+    if self.saveFormLocation then
+        local formLocation = self.settings.Value["formLocation"]
+        if formLocation ~= nil and value ~= "" then
+            local x, y = string.match(formLocation, "(%d+),(%d+)")
+            if x ~= nil and y ~= nil then
+                self.form.setPosition(x, y)
+                debug(string.format("[Settings] Set form position to %d,%d", x, y))
+            end
+        end
+    end
+end
+
+function SettingsHelper:save()
+    for _,v in ipairs(self.booleanSettings) do
+        self.settings.Value[v] = self:isEnabled(v)
+    end
+    for _,v in ipairs(self.stringSettings) do
+        self.settings.Value[v[1]] = self.form[v[1]].Text
+    end
+    local x, y = self.form.getPosition()
+    self.settings.Value["formLocation"] = string.format("%d,%d", x, y)
+end
+
+function SettingsHelper:isEnabled(element)
+    return self.form[element]:getState() == cbChecked
+end
+
+function SettingsHelper:setEnabled(element, enabled)
+    if enabled == "1" then
+        self.form[element]:setState(cbChecked)
+    else
+        self.form[element]:setState(cbUnchecked)
+    end
+end
+
+function SettingsHelper:getValue(element)
+    return self.form[element].Text
+end
+
+function SettingsHelper.getPath(str,sep)
+    sep = sep or '/'
+    return str:match("(.*"..sep..")")
+end
+
+function SettingsHelper:selectFilePath(sender, setting)
+    local dialog = createSaveDialog(sender)
+    local value = self:getValue(setting)
+    dialog.Title = "Select file to write to (currently: "..value..")"
+    dialog.InitialDir = SettingsHelper.getPath(value,"\\")
+    dialog.execute()
+    local file = dialog.FileName
+    if file ~= nil and file ~= "" then
+       self.form[setting].Text = file
+    end
+end
+
+--------------------------------
+-- Initialize Settings Helper --
+--------------------------------
+
+settings = SettingsHelper:new("gtasa_music", GTASAForm, true)
+
+settings.booleanSettings = {
+    "BeepCheckbox",
+    "DebugOutputCheckbox",
+    "HotkeyCheckbox"
+}
+
+settings.stringSettings = {
+    {"HotkeyMute",""},
+    {"HotkeyUnmute",""}
+}
+
+------------
+-- Muting --
+------------
+
+local locations = {
+    {"Four Dragons", 1958.0, 1017.1, 992.5, 80},
+    {"Caligulas", 2236.0, 1630.6, 1008.4, 120},
+    {"Bloodbowl", -1389.4, 993.2, 1023.8, 200},
+    {"LS Stadium", -1388.9, -223.6, 1043.2, 200},
+    {"Lowrider Dance", 1793.2, -1905.6, 13.5, 40, "sweet6"},
+    {"Beach Dance", 530.4, -1889.5, 3.3, 40, "music1"},
+    {"Saint Marks", -789.6, 504.9, 1371.7, 20}
+}
+
+function getActiveThreads(amount)
+    local addr = gtasa:getInteger("0x68B42C")
+    local output = {}
+    for i = 0, amount, 1 do
+        if addr == nil then
+            break
+        end
+        local threadname = readString(addr+8, 10, false)
+        if threadname == nil then
+            break
+        end
+        table.insert(output, {addr=addr, name=threadname})
+        -- Get next one
+        addr = readInteger(addr)
+    end
+    return output
+end
+
+function isActiveThread(name)
+    local threads = getActiveThreads(10)
+    for _, thread in ipairs(threads) do
+        if thread.name == name then
+            return true
+        end
+    end
+    return false
+end
+
+function getPlayerXYZ()
+    local addr = gtasa:getInteger("0x77CD98")
+    if addr == nil then
+       return nil
+    end
+    addr = readInteger(addr+20)
+    if addr == nil then
+        return nil
+    end
+    local x = readFloat(addr+48)
+    local y = readFloat(addr+52)
+    local z = readFloat(addr+56)
+    return x,y,z
+end
+
+function calculateDistance(x, y, z, cx, cy, cz)
+    return math.sqrt((cx - x)^2 + (cy - y)^2 + (cz - z)^2)
+end
+
+local lastChangedTime = 0
+local prevMute = false
+
+function checkLocation()
+    local x, y, z = getPlayerXYZ()
+    if x == nil or y == nil or z == nil then
+        return
+    end
+
+    local mute = false
+    local closestLocation = nil
+    local closestDistance = -1
+    for _,location in ipairs(locations) do
+        local cx = location[2]
+        local cy = location[3]
+        local cz = location[4]
+        local radius = location[5]
+        local thread = location[6]
+        if prevMute then
+            -- Unmute further away, to prevent constant mute/unmute
+            radius = radius + 20
+        end
+        local distance = calculateDistance(x, y, z, cx, cy, cz)
+        if distance &lt; radius then
+            if thread == nil or isActiveThread(thread) then
+                mute = true
+            end
+        end
+
+        if closestDistance == -1 or distance &lt; closestDistance then
+            closestDistance = distance
+            closestLocation = location
+        end
+    end
+
+    -- Actual muting/unmuting
+    if mute ~= prevMute then
+        setMute(mute)
+        lastChangedTime = os.clock()
+    end
+    prevMute = mute
+
+    -- Create status output
+    local state = "Muted"
+    if not mute then
+        state = "Unmuted"
+    end
+    if os.clock() - lastChangedTime &lt; 4 then
+        state = "**"..state.."**"
+    end
+    local thread = closestLocation[6]
+    if thread ~= nil then thread = "/"..thread else thread = "" end
+    local name = closestLocation[1]
+    local radius = closestLocation[5]
+    updateState(string.format("%s (%s/%.f/%.f%s)",
+        state, name, closestDistance, radius, thread))
+end
+
+function setMute(mute)
+    if mute then
+        triggerHotkey(mute)
+        sleep(50)
+        beep()
+    else
+        beep()
+        sleep(100)
+        beep()
+        sleep(700)
+        triggerHotkey(mute)
+    end
+end
+
+function triggerHotkey(mute)
+    local hotkey
+    if mute then
+        hotkey = _G["VK_"..settings:getValue("HotkeyMute")]
+    else
+        hotkey = _G["VK_"..settings:getValue("HotkeyUnmute")]
+    end
+    if settings:isEnabled("HotkeyCheckbox") and hotkey ~= nil then
+        doKeyPress(hotkey)
+    end
+end
+
+function updateState(state)
+    GTASAForm.CurrentState.Caption = state
+end
+
+-----------------------
+-- Timer (Value update)
+-----------------------
+
+function slowTimerCallback()
+    local hotkeyEnabled = settings:isEnabled("HotkeyCheckbox")
+    local beepEnabled = settings:isEnabled("BeepCheckbox")
+    if hotkeyEnabled or beepEnabled then
+        checkLocation()
+    else
+        updateState("Inactive")
+    end
+end
+
+local fastTimer
+local slowTimer
+local hotkey
+
+function init()
+    fillKeys(GTASAForm.HotkeyMute)
+    fillKeys(GTASAForm.HotkeyUnmute)
+    settings:load()
+
+    slowTimer = createTimer(nil, false)
+    timer_onTimer(slowTimer, slowTimerCallback)
+    timer_setInterval(slowTimer, 500)
+    timer_setEnabled(slowTimer, true)
+
+    gtasa:init()
+    gtasa:attach(true)
+end
+
+local function starts_with(str, start)
+   return str:sub(1, #start) == start
+end
+
+function fillKeys(combo)
+    combo:clear()
+    local keys = {}
+    for key,_ in pairs(_G) do
+        if starts_with(key, "VK_") then
+            table.insert(keys, key:sub(4))
+        end
+    end
+    table.sort(keys, function(a,b)
+        if a:len() == b:len() then
+            return a &lt; b
+        end
+        return a:len() &lt; b:len()
+    end)
+    for _,key in ipairs(keys) do
+        combo.Items.Add(key)
+    end
+end
+
+---------------------------
+-- Attach/Version Detection
+---------------------------
+
+form_show(GTASAForm)
+init()
+
+----------------
+-- GUI Functions
+----------------
+
+GTASAForm.onClose = function(sender)
+    debug("Closed")
+    object_destroy(slowTimer)
+    gtasa:cleanUp()
+    settings:save()
+    -- Only for standalone version
+    --closeCE()
+    return caHide
+end
+
+function TestMuteButton(sender)
+    setMute(true)
+end
+
+function TestUnmuteButton(sender)
+    setMute(false)
+end
+
+function CopyPlayerCoordinatesClick(sender)
+    local x, y, z = getPlayerXYZ()
+    if x ~= nil then
+        writeToClipboard(string.format("%.1f, %.1f, %.1f",
+            x, y, z))
+    else
+        writeToClipboard("Coordinates currently not available")
+    end
+end
+</LuaScript>
+</CheatTable>
