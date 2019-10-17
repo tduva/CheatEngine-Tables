@@ -16,7 +16,7 @@ Areas muted are:
 
 You can download the `.EXE` and simply execute that, which doesn't require CheatEngine to run (it basicially comes with CheatEngine included, but only runs this tool).
 
-The `.CT` file contains the uncompiled script, which you can open in CheatEngine and view/edit at your leisure. You can also `File - Save as..` and then select type `.EXE` to compile it yourself.
+The `.CT` file contains the uncompiled script, which you can open in CheatEngine and view/edit at your leisure. You can also `File - Save as..` and then select type `.EXE` to compile it yourself. (*Note:* `local standalone = true` at the top of the Lua script forces CheatEngine to exit when the trainer window is closed, you can change that to `false` for testing, but should keep it at `true` for saving a standalone trainer.)
 
 Some UI elements have tooltips when you hover over them, so check that for more info.
 

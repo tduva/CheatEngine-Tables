@@ -11,7 +11,8 @@
   <CheatEntries/>
   <UserdefinedSymbols/>
   <LuaScript>local version = "1.1"
-local standalone = false
+-- If true, exits CheatEngine as soon as trainer window is closed
+local standalone = true
 
 function debug(text)
     if settings:isEnabled("DebugOutputCheckbox") then
