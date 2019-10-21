@@ -10,7 +10,7 @@
   </Files>
   <CheatEntries/>
   <UserdefinedSymbols/>
-  <LuaScript>local version = "1.1"
+  <LuaScript>local version = "1.2"
 -- If true, exits CheatEngine as soon as trainer window is closed
 local standalone = true
 
@@ -337,13 +337,16 @@ settings.stringSettings = {
 -- Muting --
 ------------
 
+-- Name, x, y, z, radius, [thread], [custom function]
 local locations = {
     {"Four Dragons", 1958.0, 1017.1, 992.5, 80},
     {"Caligulas", 2236.0, 1630.6, 1008.4, 120},
     {"Bloodbowl", -1389.4, 993.2, 1023.8, 200},
     {"LS Stadium", -1388.9, -223.6, 1043.2, 200},
     {"Lowrider Dance", 1793.2, -1905.6, 13.5, 40, "sweet6"},
-    {"Beach Dance", 530.4, -1889.5, 3.3, 40, "music1"},
+    {"Beach Dance", 530.4, -1889.5, 3.3, 40, "music1", function(muted)
+        return getPlayerState() ~= 50 -- not in vehicle
+    end},
     {"Saint Marks", -789.6, 504.9, 1371.7, 20}
 }
 
@@ -373,6 +376,16 @@ function isActiveThread(name)
         end
     end
     return false
+end
+
+-- 0 = leaving a vehicle?, 1 = on foot?, 50 = driving
+-- 55 = wasted, 63 = busted
+function getPlayerState()
+    local addr = gtasa:getInteger("0x77CD98")
+    if addr == nil then
+        return nil
+    end
+    return readInteger(addr+1328)
 end
 
 function getPlayerXYZ()
@@ -413,6 +426,7 @@ function checkLocation()
         local cz = location[4]
         local radius = location[5]
         local thread = location[6]
+        local func = location[7]
         if prevMute then
             -- Unmute further away, to prevent constant mute/unmute
             radius = radius + 20
@@ -421,6 +435,9 @@ function checkLocation()
         if distance &lt; radius then
             if thread == nil or isActiveThread(thread) then
                 mute = true
+            end
+            if mute and func ~= nil then
+                mute = func(prevMute)
             end
         end
 
@@ -467,6 +484,9 @@ function setMute(mute)
         triggerSound(mute)
         sleep(30)
         triggerHotkey(mute)
+        -- Wait after hotkey, so in case a "mute" is triggered, there's some
+        -- time in between (even though mostly they shouldn't be close anyway)
+        sleep(300)
     end
 end
 
