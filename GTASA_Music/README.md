@@ -22,7 +22,7 @@ Some UI elements have tooltips when you hover over them, so check that for more 
 
 ### Settings
 
-You can set separate **hotkeys** for muting/unmuting. If you want/need to use the same hotkey for both (toggle), you'll have to make sure the actual mute status is synced with what the tool expects. Key modifiers are currently not supported.
+You can set separate **hotkeys** for muting/unmuting. If you want/need to use the same hotkey for both (toggle), you'll have to make sure the actual mute status is synced with what the tool expects. Triggering a hotkey with key modifiers is currently not supported. Depending on how the program that is supposed to act on the hotkey (e.g. OBS/XSplit) handles this, you may need to enable the **Modifier Wait** setting, so when you hold Ctrl/Shift/Alt ingame it doesn't look like it's sending the hotkey e.g. Shift+F14, but instead waits until you release the modifier.
 
 *Note:* Make sure you choose a hotkey that doesn't interfere with anything and test e.g. that it doesn't interrupt holding calls or whatever.
 

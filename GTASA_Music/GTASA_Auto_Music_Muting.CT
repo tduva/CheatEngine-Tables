@@ -10,7 +10,7 @@
   </Files>
   <CheatEntries/>
   <UserdefinedSymbols/>
-  <LuaScript>local version = "1.2"
+  <LuaScript>local version = "1.3"
 -- If true, exits CheatEngine as soon as trainer window is closed
 local standalone = true
 
