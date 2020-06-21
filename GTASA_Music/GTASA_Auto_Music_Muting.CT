@@ -356,7 +356,9 @@ local locations = {
     {"Beach Dance", 530.4, -1889.5, 3.3, 40, "music1", function(muted)
         return getPlayerState() ~= 50 -- not in vehicle
     end},
-    {"Saint Marks", -789.6, 504.9, 1371.7, 20}
+    {"Saint Marks", -789.6, 504.9, 1371.7, 20},
+    {"Kickstart", -1465.2, 1557.8, 1052.5, "kicksta"},
+    {"Dirttrack", -1444.6, -664.5, 1053.5, "cprace"}
 }
 
 function getActiveThreads(amount)
