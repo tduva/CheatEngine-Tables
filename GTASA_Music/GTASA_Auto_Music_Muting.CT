@@ -10,7 +10,7 @@
   </Files>
   <CheatEntries/>
   <UserdefinedSymbols/>
-  <LuaScript>local version = "1.4"
+  <LuaScript>local version = "1.5"
 -- If true, exits CheatEngine as soon as trainer window is closed
 local standalone = true
 
@@ -356,7 +356,10 @@ local locations = {
     {"Beach Dance", 530.4, -1889.5, 3.3, 40, "music1", function(muted)
         return getPlayerState() ~= 50 -- not in vehicle
     end},
-    {"Saint Marks", -789.6, 504.9, 1371.7, 20}
+    {"Saint Marks", -789.6, 504.9, 1371.7, 20},
+    {"Pleasure Domes", -2661.1, 1416.0, 922.2, 60},
+    {"Kickstart", -1414.1, 1597.8, 1052.6, 120},
+    {"Dirt Track", -1444.6, -664.5, 1053.5, 200}
 }
 
 function getActiveThreads(amount)
@@ -488,12 +491,12 @@ function setMute(mute)
     if mute then
         triggerHotkey(mute)
         -- Wait a bit, just in case, so it's actually already muted
-        sleep(30)
+        sleep(400)
         triggerSound(mute)
     else
         triggerSound(mute)
         sleep(30)
-        -- Wait again, in case it got pressed again
+        -- Wait again, in case it got pressed again during the sound/waiting
         modifierWait()
         triggerHotkey(mute)
         -- Wait after hotkey, so in case a "mute" is triggered, there's some
