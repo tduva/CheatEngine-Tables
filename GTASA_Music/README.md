@@ -8,6 +8,7 @@ Areas muted are:
 * Lowrider Dance (during Cesar Vialpando)
 * Bloodbowl
 * LS Stadium
+* LV Stadium (Kickstart/Dirt Track)
 * Four Dragons Casino
 * Caligulas Casino
 * Saint Mark's Bistro
