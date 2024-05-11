@@ -1,4 +1,4 @@
-This CheatEngine Lua script reads memory to automatically trigger a hotkey when CJ enters/leaves certain areas that forcibly play music.
+This CheatEngine Lua script reads memory to automatically trigger a hotkey/run a program when CJ enters/leaves certain areas that forcibly play music.
 
 Should support all GTA:SA versions that the autosplitter also supports.
 
@@ -26,6 +26,8 @@ Some UI elements have tooltips when you hover over them, so check that for more 
 You can set separate **hotkeys** for muting/unmuting. If you want/need to use the same hotkey for both (toggle), you'll have to make sure the actual mute status is synced with what the tool expects. Triggering a hotkey with key modifiers is currently not supported. Depending on how the program that is supposed to act on the hotkey (e.g. OBS/XSplit) handles this, you may need to enable the **Modifier Wait** setting, so when you hold Ctrl/Shift/Alt ingame it doesn't look like it's sending the hotkey e.g. Shift+F14, but instead waits until you release the modifier.
 
 *Note:* Make sure you choose a hotkey that doesn't interfere with anything and test e.g. that it doesn't interrupt holding calls or whatever.
+
+You can **run a program** using the command settings, for which you have to define the path to the program and optional parameters. It uses [shellExecute()](https://wiki.cheatengine.org/index.php?title=Lua:shellExecute), so it's similar to entering something in the "Run" field in Windows, although if the program opens a window it tries to show it minimized without taking focus.
 
 You can enable playing **audio cues** when it mutes and unmutes. The audio is played after muting/before unmuting, so that it won't appear in a recording/on stream (assuming the hotkey mutes Desktop Audio in the recording software).
 
