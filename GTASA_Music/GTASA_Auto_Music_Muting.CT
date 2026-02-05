@@ -381,7 +381,9 @@ local locations = {
     {"Saint Marks", -789.6, 504.9, 1371.7, 20},
     {"Pleasure Domes", -2661.1, 1416.0, 922.2, 60},
     {"Kickstart", -1414.1, 1597.8, 1052.6, 120},
-    {"Dirt Track", -1444.6, -664.5, 1053.5, 200}
+    {"Dirt Track", -1444.6, -664.5, 1053.5, 200},
+    {"Club", 490.8, -14.8, 1000.7, 20},
+    {"Redsands West Casino", 1129.9, 0.3, 1000.7, 20}
 }
 
 function getActiveThreads(amount)
